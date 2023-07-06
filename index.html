@@ -1,135 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>음악 검색</title>
-    <style>
-      .song-card {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 10px;
-      }
-      .song-title {
-        font-weight: bold;
-      }
-      .song-artist,
-      .song-album {
-        margin-top: 5px;
-      }
-      .song-player {
-        width: 100%;
-        height: 300px;
-      }
-
-      .main-content {
-        text-align: center;
-        margin-top: 100px;
-      }
-      .main-title {
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 20px;
-      }
-    </style>
+    <title>MENVING</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="script.js"></script>
   </head>
   <body>
-    <h1>음악 검색</h1>
-    <form id="searchForm">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="노래 제목을 입력하세요"
-      />
-      <button type="submit">검색</button>
-    </form>
-    <div id="results"></div>
+    <header>
+      <h1>MENVING</h1>
+    </header>
 
-    <p>갑자기 사이트 하나 만들어 보고 싶어서 만들어보는중.</p>
-    <p>코딩을 이제 막 시작해서 여러가지를 테스트 중.</p>
-    <p>이 사이트는 음악을 검색해서 들을수 있는 걸 만들어 볼려고 하는중.</p>
-    <p>현재, 검색에는 안녕과 IAM밖에 검색할수 없음. (다른건 검색자체가 안됨)</p>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">홈</a></li>
+        <li><a href="#">소개</a></li>
+        <li><a href="#">서비스</a></li>
+        <li><a href="#">문의</a></li>
+      </ul>
+    </nav>
 
-    <script>
-      document
-        .getElementById("searchForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+    <section id="main-section">
+      <h2>홈 화면</h2>
+      <p>여기에 홈 화면의 내용을 작성하세요.</p>
+    </section>
 
-          var keyword = document.getElementById("searchInput").value;
-
-          // TODO: 사용자가 원하는 검색 기준에 따라 결과를 추가하는 로직을 작성해주세요.
-          // 예를 들어, 특정한 조건에 맞는 노래를 추가하려면 아래와 같이 코드를 작성할 수 있습니다.
-
-          if (keyword === "안녕") {
-            var song = {
-              title: "안녕",
-              artist: "폴킴",
-              album: "호텔 델루나 OST",
-              videoId: "C7SfGvQn0q0",
-            };
-
-            var resultDiv = document.createElement("div");
-            resultDiv.classList.add("song-card");
-
-            var titleDiv = document.createElement("div");
-            titleDiv.classList.add("song-title");
-            titleDiv.textContent = song.title;
-
-            var artistDiv = document.createElement("div");
-            artistDiv.classList.add("song-artist");
-            artistDiv.textContent = song.artist;
-
-            var albumDiv = document.createElement("div");
-            albumDiv.classList.add("song-album");
-            albumDiv.textContent = song.album;
-
-            var videoPlayer = document.createElement("iframe");
-            videoPlayer.classList.add("song-player");
-            videoPlayer.src =
-              "https://www.youtube.com/embed/" + song.C7SfGvQn0q0;
-
-            resultDiv.appendChild(titleDiv);
-            resultDiv.appendChild(artistDiv);
-            resultDiv.appendChild(albumDiv);
-            resultDiv.appendChild(videoPlayer);
-
-            document.getElementById("results").appendChild(resultDiv);
-          } else if (keyword === "IAM") {
-            var song = {
-              title: "IAM",
-              artist: "아이브(IVE)",
-              album: "I've IVE",
-              videoId: "Bdzv7JBvkis",
-            };
-
-            var resultDiv = document.createElement("div");
-            resultDiv.classList.add("song-card");
-
-            var titleDiv = document.createElement("div");
-            titleDiv.classList.add("song-title");
-            titleDiv.textContent = song.title;
-
-            var artistDiv = document.createElement("div");
-            artistDiv.classList.add("song-artist");
-            artistDiv.textContent = song.artist;
-
-            var albumDiv = document.createElement("div");
-            albumDiv.classList.add("song-album");
-            albumDiv.textContent = song.album;
-
-            var videoPlayer = document.createElement("iframe");
-            videoPlayer.classList.add("song-player");
-            videoPlayer.src =
-              "https://www.youtube.com/embed/" + song.Bdzv7JBvkis;
-
-            resultDiv.appendChild(titleDiv);
-            resultDiv.appendChild(artistDiv);
-            resultDiv.appendChild(albumDiv);
-            resultDiv.appendChild(videoPlayer);
-
-            document.getElementById("results").appendChild(resultDiv);
-          } else {
-          }
-        });
-    </script>
+    <footer>
+      <p>&copy; 2023 MENVING. All rights reserved.</p>
+    </footer>
   </body>
 </html>
